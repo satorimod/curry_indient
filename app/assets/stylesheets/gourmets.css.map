@@ -1,7 +1,9 @@
 {
-"version": 3,
-"mappings": "",
-"sources": [],
-"names": [],
-"file": "gourmets.css"
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "gourmets.scss"
+    ],
+    "names": [],
+    "file": "gourmets.css"
 }
