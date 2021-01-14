@@ -2,10 +2,14 @@
 <h1 id="logo"><link href="https://fonts.googleapis.com/css?family=Cherry+Swash:700" rel="stylesheet" class="title">Curry Indient</a></h1>
 <nav id="menubar">
 <ul>
+<% if user_signed_in? %>
 <li><a href="index.html.erb">Home</a></li>
 <li><a href="about.html.erb">About</a></li>
+<li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+<% else %>
 <li><%= link_to "Log in", new_user_session_path %></li>
 <li><%= link_to "Sign up", new_user_registration_path %></li>
+<% end %>
 </ul>
 </nav>
 
