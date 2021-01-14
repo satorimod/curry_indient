@@ -8,6 +8,10 @@ class User < ApplicationRecord
     validates :last_name
     validates :first_name
     validates :date_of_birth
-    validates :nickname
+    validates :nickname, length: { maximum: 10 }
   end           
+
+  VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
+  validates :password, format: { with: VALID_PASSWORD_REGEX }
+  validates :password_confirmation, format: { with: VALID_PASSWORD_REGEX }
 end
