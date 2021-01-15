@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>初心者向けホームページテンプレート tp_beginner5</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="ここにサイト説明を入れます">
+<meta name="keywords" content="キーワード１,キーワード２,キーワード３,キーワード４,キーワード５">
+<link rel="stylesheet" href="css/style.css">
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body>
+<link href="https://fonts.googleapis.com/css?family=Cherry+Swash:700" rel="stylesheet" class="title">
+<nav id="menubar">
+<ul>
+<%= link_to "Home", root_path, method: :get %>
+</ul>
+</nav>
+
+<%= form_with model: @gourmet, local: true do |f|%>
+  <div class="field">
+    <%= f.label :name, "タイトル" %><br />
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :genre_id, "ジャンル" %><br />
+    <%= f.collection_select(:genre_id, Gourmet.all, :id, :name, {},{ class:"select-box", id:"gourmet-genre"}) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :area_id, "エリア" %><br />
+    <%= f.collection_select(:area_id, Gourmet.all, :id, :name, {},{class:"select-box", id:"gourmet-area"}) %>
+  </div>
+
+  <div class="field">
+		<%= f.label :menu, "メニュー" %><br />
+    <%= f.text_field :menu %>
+  </div>
+
+	<div class="field">
+		<%= f.label :feature, "特徴" %><br />
+		<%= f.text_field :feature %>
+	</div>	
+
+	<div class="field">
+		<%= f.label :content, "内容" %><br />
+		<%= f.text_area :content %>
+	</div>
+
+  <div class="actions">
+    <%= f.submit "保存する", class: :form__btn  %>
+  </div>
+<% end %>
+
+
+
+<!--/contents-->
+
+<%= render 'shared/footer' %>
+
+</div>
+<!--/container-->
+
+</body>
+</html>

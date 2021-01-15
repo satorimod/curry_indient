@@ -7,6 +7,7 @@ class Gourmet < ApplicationRecord
     validates :name
     validates :feature
     validates :content
+    validates :image
 
     with_options numericality: { other_than: 1 } do
       validates :genre_id
