@@ -23,19 +23,24 @@
 </nav>
 
 <%= form_with model: @gourmet, local: true do |f|%>
+<%= render 'shared/error_messages', model: @gourmet %>
   <div class="field">
     <%= f.label :name, "タイトル" %><br />
-    <%= f.text_field :title %>
+    <%= f.text_field :name %>
   </div>
 
   <div class="field">
+    <%= f.label :image, "画像"%>
+    <%= f.file_field :image %>
+
+  <div class="field">
     <%= f.label :genre_id, "ジャンル" %><br />
-    <%= f.collection_select(:genre_id, Gourmet.all, :id, :name, {},{ class:"select-box", id:"gourmet-genre"}) %>
+    <%= f.collection_select(:genre_id, Genre.all, :id, :name, {},{ class:"select-box", id:"gourmet-genre"}) %>
   </div>
 
   <div class="field">
     <%= f.label :area_id, "エリア" %><br />
-    <%= f.collection_select(:area_id, Gourmet.all, :id, :name, {},{class:"select-box", id:"gourmet-area"}) %>
+    <%= f.collection_select(:area_id, Area.all, :id, :name, {},{class:"select-box", id:"gourmet-area"}) %>
   </div>
 
   <div class="field">
