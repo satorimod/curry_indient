@@ -18,6 +18,9 @@ class GourmetsController < ApplicationController
     end    
   end  
 
+  def show
+  end  
+
   private
 
   def gourmet_params
