@@ -69,8 +69,9 @@ header {
 /*メニュー全体を囲むブロック*/
 #menubar {
 	text-align: center;		/*文字をセンタリング*/
-	font-size: 18px;		/*文字サイズ*/
+	font-size: 40px;		/*文字サイズ*/
 	margin-bottom: 40px;	/*下に空けるスペース*/
+	font-family: 'Cherry Swash', cursive;
 }
 /*メニュー１個あたりの設定*/
 #menubar li {
@@ -273,4 +274,16 @@ body {
 ---------------------------------------------------------------------------*/
 .ws,.wl {width: 94%;}
 
+}
+
+.field {
+	text-align: center;
+}
+
+.error-alert {
+	text-align: center;
+}
+
+.actions {
+	text-align: center;
 }

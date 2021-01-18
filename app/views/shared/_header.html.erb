@@ -3,7 +3,7 @@
 <nav id="menubar">
 <ul>
 <% if user_signed_in? %>
-<li><a href="index.html.erb">Home</a></li>
+<li><%= link_to "New Review",new_gourmet_path %></li>
 <li><a href="about.html.erb">About</a></li>
 <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
 <% else %>
@@ -14,4 +14,4 @@
 </nav>
 
 <aside id="mainimg"><%= image_tag "india.jpg" %></aside>
-</header>
+</header> 
