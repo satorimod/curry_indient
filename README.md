@@ -2,7 +2,8 @@
 <h1 id="logo"><link href="https://fonts.googleapis.com/css?family=Cherry+Swash:700" rel="stylesheet" class="title">Curry Indient</a></h1>
 
 # 概要
-幅広いインドカレーの文化を共有しやすくするためのグルメレビューアプリです。        タイトルのIndientというのは造語で、Incident(事変)とIndiaを合わせて作った言葉です。
+幅広いインドカレーの文化を共有しやすくするためのグルメレビューアプリです。インドカレーを中心としたグルメレビューが投稿でき、そのレビューに対してコメント投稿することができます。
+ちなみにタイトルのIndientというのは造語で、Incident(事変)とIndiaを合わせて作った言葉です。
 
 
 # テーブル設計
