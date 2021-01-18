@@ -275,3 +275,15 @@ body {
 .ws,.wl {width: 94%;}
 
 }
+
+.field {
+	text-align: center;
+}
+
+.error-alert {
+	text-align: center;
+}
+
+.actions {
+	text-align: center;
+}
