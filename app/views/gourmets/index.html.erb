@@ -26,24 +26,6 @@
   <% @gourmets.each do |gourmet| %>
   <div class="review">
    <%= link_to gourmet.name, "#", class: :review_title %>
-    <div class="review-image">
-    <%= image_tag gourmet.image %>
-      <div class ="review-genre">
-        <%= gourmet.genre.name %>
-          <div class="review-area">
-          <%= gourmet.area.name %>
-           <div class="review-menu">
-           <%= gourmet.menu %>
-            <div class="review-feature">
-            <%= gourmet.feature %>
-              <div class="review-content">
-              <%= gourmet.content %>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>          
    </div>  
   <% end %>
 </div>

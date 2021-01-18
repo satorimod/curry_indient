@@ -287,3 +287,7 @@ body {
 .actions {
 	text-align: center;
 }
+
+.title {
+	font-family: 'Cherry Swash', cursive;
+}
