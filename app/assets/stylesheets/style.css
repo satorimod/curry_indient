@@ -288,6 +288,11 @@ body {
 	text-align: center;
 }
 
-.title {
-	font-family: 'Cherry Swash', cursive;
+.contents {
+	text-align: center;
 }
+
+
+.gourmet__wrapper {
+	text-align: center;
+

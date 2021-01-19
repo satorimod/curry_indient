@@ -1,0 +1,45 @@
+<%= render "shared/header" %>
+
+<main class="main">
+  <div class="inner">
+    <div class="gourmet__wrapper">
+      <p class="gourmet__hedding">
+        <%= @gourmet.name %>
+      </p>
+      <% if user_signed_in? && current_user.id == @gourmet.user_id %>
+        <div class="gourmet__manage">
+          <%= link_to "編集する", "#",method: :get, class: :prototype__btn %>
+          <%= link_to "削除する", "#", method: :delete, class: :prototype__btn %>
+        </div>
+      <% end %>
+      <div class="gourmet__image">
+        <%= image_tag @gourmet.image %>
+      </div>
+      <div class="gourmet__body">
+        <div class="gourmet__detail">
+          <p class="detail__message">ジャンル
+            <%= @gourmet.genre.name %>
+          </p>
+        </div>
+        <div class="gourmet__detail">
+          <p class="detail__message">地域
+            <%= @gourmet.area.name %>
+          </p>
+        </div>
+      </div>
+      <div class="gourmet__detail">
+      <p class="detail__message">
+       <%= @gourmet.menu%>
+      </p>
+      </div>
+      <div class="gourmet__detail">
+      <p class="detail__message">
+      <%= @gourmet.feature %>
+      </p>
+      </div>
+      <div class="gourmet__detail">
+      <p class="detail__message">
+      <%= @gourmet.content %>
+      </p>
+      </div>
+</main>
