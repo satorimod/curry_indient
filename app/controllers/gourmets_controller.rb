@@ -1,5 +1,6 @@
 class GourmetsController < ApplicationController
   before_action :move_to_index, except: [:index]
+  before_action :set_gourmet, only: [:show]
   def index
     @gourmets = Gourmet.all.order('created_at DESC')
   end
@@ -26,6 +27,10 @@ class GourmetsController < ApplicationController
   def gourmet_params
     params.require(:gourmet).permit(:name, :genre_id, :area_id, :menu, :feature, :content, :image, :user).merge(user_id: current_user.id)
   end
+
+  def set_gourmet
+    @gourmet = Gourmet.find(params[:id])
+  end  
 
   def move_to_index
     redirect_to action: :index unless user_signed_in?
