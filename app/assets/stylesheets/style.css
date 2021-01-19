@@ -295,9 +295,18 @@ body {
 
 
 .gourmet__wrapper {
-	text-align: center
+	text-align: center;
 }
 
 .gourmet__image {
+	
 	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;	/*フォント種類*/
+}
+
+.gourmet__btn {
+	font-size: 20px;
+}
+
+.inner {
+	border-radius: 10px;
 }

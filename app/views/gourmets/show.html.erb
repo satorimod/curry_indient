@@ -9,8 +9,8 @@
       </p>
       <% if user_signed_in? && current_user.id == @gourmet.user_id %>
         <div class="gourmet__manage">
-          <%= link_to "編集する", edit_gourmet_path(@gourmet.id),method: :get, class: :prototype__btn %>
-          <%= link_to "削除する", gourmet_path, method: :delete, class: :prototype__btn %>
+          <%= link_to "編集する", edit_gourmet_path(@gourmet.id),method: :get, class: :gourmet__btn %>
+          <%= link_to "削除する", gourmet_path, method: :delete, class: :gourmet__btn %>
         </div>
       <% end %>
       <div class="gourmet__image">
