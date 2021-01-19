@@ -1,6 +1,6 @@
 class GourmetsController < ApplicationController
   before_action :move_to_index, except: [:index]
-  before_action :set_gourmet, only: [:show]
+  before_action :set_gourmet, only: [:show, :edit, :update]
   def index
     @gourmets = Gourmet.all.order('created_at DESC')
   end
@@ -20,6 +20,23 @@ class GourmetsController < ApplicationController
   end  
 
   def show
+  end  
+
+  def edit
+  end
+  
+  def update
+    if @gourmet.update(gourmet_params)
+    redirect_to root_path
+    else
+      render :edit
+    end  
+  end  
+
+  def destroy
+    gourmet = Gourmet.find(params[:id])
+    gourmet.destroy
+    redirect_to root_path
   end  
 
   private
