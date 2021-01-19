@@ -1,6 +1,6 @@
 class GourmetsController < ApplicationController
-  before_action :move_to_index, except: [:index]
-  before_action :set_gourmet, only: [:show]
+  before_action :contributor_confirmation, only: [:edit, :update, :destroy]
+  before_action :set_gourmet, only: [:show, :edit, :update]
   def index
     @gourmets = Gourmet.all.order('created_at DESC')
   end
@@ -22,6 +22,23 @@ class GourmetsController < ApplicationController
   def show
   end  
 
+  def edit
+  end
+  
+  def update
+    if @gourmet.update(gourmet_params)
+    redirect_to root_path
+    else
+      render :edit
+    end  
+  end  
+
+  def destroy
+    gourmet = Gourmet.find(params[:id])
+    gourmet.destroy
+    redirect_to root_path
+  end  
+
   private
 
   def gourmet_params
@@ -32,7 +49,7 @@ class GourmetsController < ApplicationController
     @gourmet = Gourmet.find(params[:id])
   end  
 
-  def move_to_index
-    redirect_to action: :index unless user_signed_in?
+  def contributor_confirmation
+    redirect_to root_path unless current_user == @gourmet.user
   end
 end

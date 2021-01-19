@@ -1,0 +1,55 @@
+</head>
+
+<body>
+<link href="https://fonts.googleapis.com/css?family=Cherry+Swash:700" rel="stylesheet" class="title">
+<nav id="menubar">
+<ul>
+<%= link_to "Home", root_path, method: :get %>
+</ul>
+</nav>
+
+<%= form_with model: @gourmet, local: true do |f|%>
+<%= render 'shared/error_messages', model: @gourmet %>
+  <div class="field">
+    <%= f.label :name, "タイトル" %><br />
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image, "画像"%>
+    <%= f.file_field :image, id: "gourmet-image" %>
+    <div id="image-list"></div>
+  </div>  
+
+  <div class="field">
+    <%= f.label :genre_id, "ジャンル" %><br />
+    <%= f.collection_select(:genre_id, Genre.all, :id, :name, {},{ class:"select-box", id:"gourmet-genre"}) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :area_id, "エリア" %><br />
+    <%= f.collection_select(:area_id, Area.all, :id, :name, {},{class:"select-box", id:"gourmet-area"}) %>
+  </div>
+
+  <div class="field">
+		<%= f.label :menu, "メニュー" %><br />
+    <%= f.text_field :menu %>
+  </div>
+
+	<div class="field">
+		<%= f.label :feature, "特徴" %><br />
+		<%= f.text_field :feature %>
+	</div>	
+
+	<div class="field">
+		<%= f.label :content, "内容" %><br />
+		<%= f.text_area :content %>
+	</div>
+
+  <div class="actions">
+    <%= f.submit "保存する", class: :form__btn  %>
+  </div>
+<% end %>
+
+<%= render 'shared/footer' %>
+</body>
