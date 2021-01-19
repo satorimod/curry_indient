@@ -1,5 +1,5 @@
 class GourmetsController < ApplicationController
-  before_action :move_to_index, except: [:index]
+  before_action :contributor_confirmation, only: [:edit, :update, :destroy]
   before_action :set_gourmet, only: [:show, :edit, :update]
   def index
     @gourmets = Gourmet.all.order('created_at DESC')
@@ -49,7 +49,7 @@ class GourmetsController < ApplicationController
     @gourmet = Gourmet.find(params[:id])
   end  
 
-  def move_to_index
-    redirect_to action: :index unless user_signed_in?
+  def contributor_confirmation
+    redirect_to root_path unless current_user == @gourmet.user
   end
 end
