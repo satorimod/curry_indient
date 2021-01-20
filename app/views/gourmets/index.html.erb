@@ -5,7 +5,7 @@
 <aside id="mainimg"><%= image_tag "india.jpg" %></aside>
 
 <div class="contents"> 
-  <h1 class= 'new-review'>新規レビュー投稿</h1>
+  <h1 class= 'new-review'>新規レビュー!</h1>
   <% @gourmets.each do |gourmet| %>
   <div class="review">
    <%= link_to gourmet.name, gourmet_path(gourmet.id), class: :review_title %>
