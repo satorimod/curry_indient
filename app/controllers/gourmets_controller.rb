@@ -20,6 +20,8 @@ class GourmetsController < ApplicationController
   end  
 
   def show
+    @comment = Comment.new
+    @comments = @gourmet.comments
   end  
 
   def edit
