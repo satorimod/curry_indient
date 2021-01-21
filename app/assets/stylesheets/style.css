@@ -299,7 +299,6 @@ body {
 }
 
 .gourmet__image {
-	
 	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;	/*フォント種類*/
 }
 
@@ -309,4 +308,19 @@ body {
 
 .inner {
 	border-radius: 10px;
+}
+
+.new-review {
+	word-break: break-all;
+	border: 1px solid #999;	/*テーブルの枠線の幅、線種、色*/
+	padding: 10px;			/*テーブル内の余白*/
+	background-color:#550000 ;
+	color: #fff;
+	font-size: 25px;
+}
+
+.review {
+	justify-content: space-around;
+	display: flex;
+	font-size: 20px;
 }

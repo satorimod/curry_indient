@@ -9,7 +9,9 @@
   <% @gourmets.each do |gourmet| %>
   <div class="review">
    <%= link_to gourmet.name, gourmet_path(gourmet.id), class: :review_title %>
-   </div>  
+    <ul class="review-date">
+   <%= gourmet.created_at.to_s(:datetime_jp) %></ul>
+  </div>   
   <% end %>
 </div>
 

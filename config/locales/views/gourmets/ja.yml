@@ -1,0 +1,9 @@
+ja:
+   activerecord:
+    models:
+      gourmet:
+         name: タイトル
+         image: 画像
+         menu: メニュー
+         feature: 特徴
+         content: 内容
