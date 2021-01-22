@@ -1,9 +1,9 @@
 ja:
    activerecord:
-    models:
+    attributes:
       gourmet:
          name: タイトル
          image: 画像
          menu: メニュー
          feature: 特徴
-         content: 内容
+         content: 内容               

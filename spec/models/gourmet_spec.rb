@@ -13,10 +13,10 @@ RSpec.describe Gourmet, type: :model do
     end
     
     context 'グルメレビュー投稿がうまくいかないとき' do
-      it 'nameが空では登録できないこと' do
+      it 'タイトルが空では登録できないこと' do
         @gourmet.name = ""
         @gourmet.valid?
-        expect(@gourmet.errors.full_messages).to include("Nameを入力してください")
+        expect(@gourmet.errors.full_messages).to include("タイトルを入力してください")
       end
       it 'genre_idが空では登録できないこと' do
         @gourmet.genre_id = ""
@@ -38,20 +38,20 @@ RSpec.describe Gourmet, type: :model do
         @gourmet.valid?
         expect(@gourmet.errors.full_messages).to include("Areaは0以外の値にしてください")
       end
-      it 'menuが空では登録できないこと' do
+      it 'メニューが空では登録できないこと' do
         @gourmet.menu = ""
         @gourmet.valid?
-        expect(@gourmet.errors.full_messages).to include("Menuを入力してください")
+        expect(@gourmet.errors.full_messages).to include("メニューを入力してください")
       end
-      it 'featureが空では登録できないこと' do
+      it '特徴が空では登録できないこと' do
         @gourmet.feature = ""
         @gourmet.valid?
-        expect(@gourmet.errors.full_messages).to include("Featureを入力してください")
+        expect(@gourmet.errors.full_messages).to include("特徴を入力してください")
       end
-      it 'contentが空では登録できないこと' do
+      it '内容が空では登録できないこと' do
         @gourmet.content = ""
         @gourmet.valid?
-        expect(@gourmet.errors.full_messages).to include("Contentを入力してください")        
+        expect(@gourmet.errors.full_messages).to include("内容を入力してください")        
       end
     end  
   end  

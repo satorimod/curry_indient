@@ -9,13 +9,17 @@
 body {
 	margin: 0px;
 	padding: 0px;
+	height: 100%;
+	width: 100%;
 	-webkit-text-size-adjust: none;
 	color: #666;	/*全体の文字色*/
 	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;	/*フォント種類*/
 	font-size: 16px;	/*文字サイズ*/
 	line-height: 2;		/*行間*/
-	background: #fff;	/*背景色*/
 	text-align: center;
+	background-color: #FAEBD7;
+	min-height: 100%;
+	min-width: 100%;
 }
 h1,h2,h3,h4,h5,p,ul,ol,li,dl,dt,dd,form,figure,form,select,input,textarea {margin: 0px;padding: 0px;font-size: 100%;font-weight: normal;}
 ul {list-style-type: none;}
@@ -250,6 +254,8 @@ footer .pr {
 body {
 	font-size: 12px;	/*文字サイズ*/
 	line-height: 1.5;	/*行間*/
+	background-color: #FAEBD7;
+	height: 100vh;
 }
 
 /*メニュー
@@ -277,10 +283,6 @@ body {
 
 }
 
-.field {
-	text-align: center;
-}
-
 .error-alert {
 	text-align: center;
 }
@@ -298,8 +300,16 @@ body {
 	text-align: center;
 }
 
+.gourmet__hedding {
+	font-size: 40px;
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
+.gourmet__detail {
+	font-size: 20px;
+}
+
 .gourmet__image {
-	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;	/*フォント種類*/
+	border-radius: 10px;
 }
 
 .gourmet__btn {
@@ -315,7 +325,7 @@ body {
 	border: 1px solid #999;	/*テーブルの枠線の幅、線種、色*/
 	padding: 10px;			/*テーブル内の余白*/
 	background-color:#550000 ;
-	color: #fff;
+	color:rgba(245, 245, 245, 0.908);
 	font-size: 25px;
 }
 
@@ -323,4 +333,39 @@ body {
 	justify-content: space-around;
 	display: flex;
 	font-size: 20px;
+}
+
+.form__btn {
+	background-color: lightgoldenrodyellow;
+	font-size: 15px;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 20px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+}
+
+.form__btn:hover {
+	background-color: gold;
+  border-radius: 60% 80% / 100% 80%;
+}
+
+.ef {
+	border: 4px solid #82636b;
+    border-radius: 140px 15px 185px 15px / 15px 200px 15px 185px;
+    margin: 2em 0;
+    padding: 10px;
 }
