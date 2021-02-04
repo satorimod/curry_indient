@@ -1,6 +1,6 @@
 class GourmetsController < ApplicationController
   before_action :contributor_confirmation, only: [:edit, :update, :destroy]
-  before_action :set_gourmet, only: [:show, :edit, :update]
+  before_action :set_gourmet, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
@@ -54,6 +54,7 @@ class GourmetsController < ApplicationController
   end  
 
   def contributor_confirmation
-    redirect_to root_path unless current_user == @gourmet.user
+    binding.pry
+    redirect_to root_path unless current_user.id == @gourmet.user_id
   end
 end
