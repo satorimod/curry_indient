@@ -11,6 +11,9 @@
           <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
         </div>
 
+        <%if @sns_id.present? %>
+         <%= hidden_field_tag :sns_auth, true %>
+        <% else %>
         <div class="field">
           <%= f.label :password, "パスワード（6文字以上）" %><br />
           <%= f.password_field :password, autocomplete: "new-password" %>
@@ -20,6 +23,7 @@
           <%= f.label :password_confirmation, "パスワード再入力" %><br />
           <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
         </div>
+        <% end %>
 
         <div class="field">
           <%= f.label :last_name, "姓" %><br />
@@ -43,7 +47,10 @@
 
         <div class="actions">
           <%= f.submit "新規登録", class: :form__btn  %>
+          <%= link_to "Facebookで登録", user_facebook_omniauth_authorize_path, method: :post%>
+          <%= link_to "Googleで登録", user_google_oauth2_omniauth_authorize_path, method: :post%>
         </div>
+        
       <% end %>
     </div>
   </div>
