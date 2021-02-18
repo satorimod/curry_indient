@@ -17,7 +17,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       params[:user][:password_confirmation] = pass
     end
     super
-  end  
+  end
 
   # GET /resource/edit
   # def edit

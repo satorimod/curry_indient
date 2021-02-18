@@ -10,7 +10,7 @@ class GourmetsController < ApplicationController
   def new
     @gourmet = Gourmet.new
   end
-  
+
   def create
     @gourmet = Gourmet.new(gourmet_params)
     if @gourmet.valid?
@@ -18,40 +18,41 @@ class GourmetsController < ApplicationController
       redirect_to root_path
     else
       render :new
-    end    
-  end  
+    end
+  end
 
   def show
     @comment = Comment.new
     @comments = @gourmet.comments
-  end  
+  end
 
   def edit
   end
-  
+
   def update
     if @gourmet.update(gourmet_params)
-    redirect_to root_path
+      redirect_to root_path
     else
       render :edit
-    end  
-  end  
+    end
+  end
 
   def destroy
     gourmet = Gourmet.find(params[:id])
     gourmet.destroy
     redirect_to root_path
-  end  
+  end
 
   private
 
   def gourmet_params
-    params.require(:gourmet).permit(:name, :genre_id, :area_id, :menu, :feature, :content, :image, :user).merge(user_id: current_user.id)
+    params.require(:gourmet).permit(:name, :genre_id, :area_id, :menu, :feature, :content, :image,
+                                    :user).merge(user_id: current_user.id)
   end
 
   def set_gourmet
     @gourmet = Gourmet.find(params[:id])
-  end  
+  end
 
   def contributor_confirmation
     binding.pry
