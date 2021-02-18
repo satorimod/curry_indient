@@ -6,6 +6,14 @@ class Gourmet < ApplicationRecord
   belongs_to :genre
   belongs_to :area
 
+  def self.search(search)
+    if search != ""
+      Gourmet.where('text LIKE(?)', "%#{search}%")
+    else
+      Gourmet.all
+    end
+  end
+
   with_options presence: true do
     validates :name
     validates :menu

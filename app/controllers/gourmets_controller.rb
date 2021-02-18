@@ -26,6 +26,10 @@ class GourmetsController < ApplicationController
     @comments = @gourmet.comments
   end
 
+  def search
+    @gourmets = Gourmet.search(params[:keyword])
+  end  
+
   def edit
   end
 
